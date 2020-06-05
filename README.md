@@ -1,14 +1,15 @@
-# Submission name
+# WellnessQ
 
 [![License](https://img.shields.io/badge/License-Apache2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Slack](https://img.shields.io/badge/Join-Slack-blue)](https://callforcode.org/slack) [![Website](https://img.shields.io/badge/View-Website-blue)](https://code-and-response.github.io/Project-Sample/)
 
-A basic GitHub repository example for Call for Code submissions and those projects that join the Code and Response initiative. Not all sections or files are required. You can make this as simple or as in-depth as you need.
+Automation tool that virtualizes the waiting Queue At medical centers, Labs and  hospital. Specifically during the hour of crisis like Covid-19 pandemic.
+
 
 *Read this in other languages: [English](README.md), [한국어](README.ko.md), [português](README.pt_br.md).*
 
 ## Contents
 
-1. [Short description](#short-description)
+1. [About Existing Medical Procedure](#About-Existing-Medical-Procedure)
 1. [Demo video](#demo-video)
 1. [The architecture](#the-architecture)
 1. [Long description](#long-description)
@@ -23,19 +24,32 @@ A basic GitHub repository example for Call for Code submissions and those projec
 1. [License](#license)
 1. [Acknowledgments](#acknowledgments)
 
-## Short description
+## About Existing Medical Procedure
 
-### What's the problem?
+The existing PCR test is registered through a self reporting form for COVID-19 Sample collection.
+After submission of the form the mobile number provided in the form gets the OTP , id, Sample ID as a text message. 
+They also get provided a link to download ICMR Specimen Referral Form For Covid-19(SARS-CoV2).At Medical centers and collection centers they do not have the real-time tracking application for queue status while waiting at the quarantined place for their turn to appear.
 
-Part of the World Health Organization's guidance on limiting further spread of COVID-19 is to practice social distancing. As a result, schools in most affected areas are taking precautionary measures by closing their facilities. With school-aged children at home for an indeterminate amount of time,  keeping them engaged, entertained, and on top of their education is important.
+### Problem Statement
+
+The Medical centers and collection centers do not have the real-time tracking application for queue status while waiting at the quarantined place for their turn to appear.
 
 ### How can technology help?
 
-Schools and teachers can continue to engage with their students through virtual classrooms, and even create interactive spaces for classes. As parents face a new situation where they may need to homeschool their children, finding appropriate online resources is important as well.
+We can automate the queue into virtual one so that the patient does not have to stay anxious for its turn for long. It can track the people those are there before and stay alert about its turn. we as well as send the certificate of people who tested negative. Apart from the Covid-19 patients, it can also help the other category of health  department. which will facilitate patients to stay safe while maintaining safe social distancing
 
-### The idea
+### The Idea: Solution
 
-It's imperative that learning and creating can continue when educational institutions have to shift the way they teach in times of crises, such as the COVID-19 pandemic. Providing a set of open source tools, backed by IBM Cloud and Watson Services, will enable educators to more easily make content available for their students.
+ 1. Multiple categories: one category will be covid-19 
+ 2. Inside that the user has to answer certain questions 
+ 3. Recommend the user with the list of test/Health facility centers nearer
+ 4. Option to select an appointment slot time
+ 5. In that slot, option to view number of people in Queue                
+ 6. Request for queue Token 
+ 7. Option track users turn 
+ 8. Responsive notification alert 
+ 9. Downloading certificate for Tested negative reports 
+
 
 ## Demo video
 
@@ -45,10 +59,41 @@ It's imperative that learning and creating can continue when educational institu
 
 ![Video transcription/translation app](https://developer.ibm.com/developer/tutorials/cfc-starter-kit-speech-to-text-app-example/images/cfc-covid19-remote-education-diagram-2.png)
 
-1. The user navigates to the site and uploads a video file.
-2. Watson Speech to Text processes the audio and extracts the text.
-3. Watson Translation (optionally) can translate the text to the desired language.
-4. The app stores the translated text as a document within Object Storage.
+1. Login 
+
+    a. Generate OTP
+    b. Login using OTP
+    c. Select type 
+         c1. Doctor
+         c2. Patient
+    d. Edit profile
+    e. View Notification
+    f. Logout
+
+
+2. Search/Select for available 
+     
+     a. View All Health Category
+     b. Search available doctors, health center and labs for a perticular slot and department
+     c. View My requests for queue
+     d. View number of appointments already taken for a particular time slot
+
+3. Request and track
+    
+      a. Request for Queue
+      b. Delete your request
+      c. Get real-time notification when queues are updated 
+
+4. The android app uses push notification service and gcm service
+
+5. The android app makes REST API calls to spring boot backend to get records of users
+
+6. The Spring boot backend is connected to MongoDB in cloud
+
+7. The Software product WellnessQ is deployed in IBM cloud foundry Application
+ 
+
+
 
 ## Long description
 
@@ -67,26 +112,30 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```bash
-dnf install wget
-wget http://www.example.com/install.sh
+Install Java Eclipse
+Install Android Studio
+Create mongoDB account
+Create IBM cloud foundry Application
+Create IBM cloud push notification service
+
 bash install.sh
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be, for example
+
+1. Spring-boot backend set up
 
 ```bash
-export TOKEN="fffd0923aa667c617a62f5A_fake_token754a2ad06cc9903543f1e85"
-export EMAIL="jane@example.com"
-dnf install npm
-node samplefile.js
-Server running at http://127.0.0.1:3000/
+import existing maven project
+maven install
+maven build and set goal to "spring-boot:run"
+Application is now running on tomcat server
+Server running at http://localhost:8080/
 ```
 
-And repeat
+2. Android Native Set up
 
 ```bash
 curl localhost:3000
@@ -121,7 +170,7 @@ npx eslint sample-file.js
 
 ## Live demo
 
-You can find a running system to test at [callforcode.mybluemix.net](http://callforcode.mybluemix.net/)
+You can find a running system to test at [wellnessq.mybluemix.net](http://callforcode.mybluemix.net/)
 
 ## Built with
 
