@@ -15,14 +15,13 @@ Automation tool that virtualizes the waiting Queue At medical centers, Labs and 
 1. [Long description](#long-description)
 1. [Project roadmap](#project-roadmap)
 1. [Getting started](#getting-started)
-1. [Running the tests](#running-the-tests)
+1. [Running the tests](#running-the-WellnessQ-app)
 1. [Live demo](#live-demo)
 1. [Built with](#built-with)
 1. [Contributing](#contributing)
 1. [Versioning](#versioning)
 1. [Authors](#authors)
-1. [License](#license)
-1. [Acknowledgments](#acknowledgments)
+
 
 ## About Existing Medical Procedure
 
@@ -101,7 +100,7 @@ We can automate the queue into virtual one so that the patient does not have to 
 
 ## Project roadmap
 
-![Roadmap](RoadMap.jpg)
+![Roadmap](roadmaphackathon.jpg)
 
 ## Getting started
 
@@ -114,9 +113,9 @@ What things you need to install the software and how to install them
 ```bash
 Install Java Eclipse
 Install Android Studio
-Create mongoDB account
-Create IBM cloud foundry Application
-Create IBM cloud push notification service
+mongoDB cluster
+IBM cloud foundry Application
+IBM cloud push notification service
 
 bash install.sh
 ```
@@ -124,11 +123,11 @@ bash install.sh
 ### Installing
 
 
-
 1. Spring-boot backend set up
 
 ```bash
-import existing maven project
+Install java eclipse 
+Import existing maven project
 maven install
 maven build and set goal to "spring-boot:run"
 Application is now running on tomcat server
@@ -138,8 +137,8 @@ Server running at http://localhost:8080/
 2. Android Native Set up
 
 ```bash
-curl localhost:3000
-Thanks for looking at Code-and-Response!
+install Android studio
+import project
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
@@ -148,24 +147,34 @@ End with an example of getting some data out of the system or using it for a lit
 
 Explain how to run the automated tests for this system
 
-### Break down into end to end tests
+### manifest.yml file
 
 Explain what these tests test and why, if you were using something like `mocha` for instnance
 
 ```bash
-npm install mocha --save-dev
-vi test/test.js
-./node_modules/mocha/bin/mocha
+applications:
+- instances: 1
+  timeout: <ms>
+  name: <name>
+  buildpack: java_buildpack
+  path: ./target/<jarfilename>.jar
+  disk_quota: 1G
+  memory: 512MB
+  domain: mybluemix.net
+  host: <hostname>
+  env:
+    JAVA_OPTS: '-XX:ReservedCodeCacheSize=32M -XX:MaxDirectMemorySize=32M'
+    JBP_CONFIG_OPEN_JDK_JRE: '[memory_calculator: {stack_threads: 30}]'
 ```
 
-### And coding style tests
+### And Cloud foundry application deployment
 
-Explain what these tests test and why, if you chose `eslint` for example
+[how to deploy your application to cloud fooundry](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)
+Keep your deployable jar and manifest.yml file in the same folder and open cammand prompt from that file location. Run following two commands to deploy your application.
 
 ```bash
-npm install eslint --save-dev
-npx eslint --init
-npx eslint sample-file.js
+cf login --sso
+cf pushs
 ```
 
 ## Live demo
@@ -174,12 +183,12 @@ You can find a running system to test at [wellnessq.mybluemix.net](http://callfo
 
 ## Built with
 
-* [IBM Cloudant](https://cloud.ibm.com/catalog?search=cloudant#search_results) - The NoSQL database used
-* [IBM Cloud Functions](https://cloud.ibm.com/catalog?search=cloud%20functions#search_results) - The compute platform for handing logic
-* [IBM API Connect](https://cloud.ibm.com/catalog?search=api%20connect#search_results) - The web framework used
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [IBM Cloudfoundry](https://cloud.ibm.com/catalog?search=cloudant#search_results) - Application deployed in IBM Cloud foundry Application
+* [IBM Push Notifications](https://cloud.ibm.com/catalog/services/push-notifications) - Ability to personalize and send notifications
+* [MongoDB Atlas](https://www.mongodb.com/world?tck=cloud_login) - The NoSQL database used
+* [Java eclipse](https://www.eclipse.org/downloads/packages/installerhttp://www.dropwizard.io/1.0.2/docs/) - The IDE used for backed development
 * [Maven](https://maven.apache.org/) - Dependency management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Android Studio](https://developer.android.com/studio) - The IDE used for andriod development
 
 ## Contributing
 
@@ -191,14 +200,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Ananya Stitipragyab** - *Backend and Document work*
+* **supriya Sinha** - *Android, front-end development, integration* 
 
 See also the list of [contributors](https://github.com/Code-and-Response/Project-Sample/graphs/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the Apache 2 License - see the [LICENSE](LICENSE) file for details
-
-## Acknowledgments
-
-* Based on [Billie Thompson's README template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
