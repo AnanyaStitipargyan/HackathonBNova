@@ -40,14 +40,23 @@ We can automate the queue into virtual one so that the patient does not have to 
 ### The Idea: Solution
 
  1. Multiple categories: one category will be covid-19 
+
  2. Inside that the user has to answer certain questions 
+
  3. Recommend the user with the list of test/Health facility centers nearer
+
  4. Option to select an appointment slot time
- 5. In that slot, option to view number of people in Queue                
- 6. Request for queue Token 
+
+ 5. In that slot, option to view number of people in Queue  
+              
+ 6. Request for queue Token
+ 
  7. Option track users turn 
+
  8. Responsive notification alert 
+
  9. Downloading certificate for Tested negative reports 
+
 
 
 ## Demo video
@@ -117,7 +126,6 @@ mongoDB cluster
 IBM cloud foundry Application
 IBM cloud push notification service
 
-bash install.sh
 ```
 
 ### Installing
@@ -179,7 +187,7 @@ cf pushs
 
 ## Live demo
 
-You can find a running system to test at [wellnessq.mybluemix.net](http://callforcode.mybluemix.net/)
+You can find a running system to test at [wellnessq.mybluemix.net](http://wellnessq.mybluemix.net/)
 
 ## Built with
 
@@ -189,6 +197,7 @@ You can find a running system to test at [wellnessq.mybluemix.net](http://callfo
 * [Java eclipse](https://www.eclipse.org/downloads/packages/installerhttp://www.dropwizard.io/1.0.2/docs/) - The IDE used for backed development
 * [Maven](https://maven.apache.org/) - Dependency management
 * [Android Studio](https://developer.android.com/studio) - The IDE used for andriod development
+* [swagger ui]- Enabled
 
 ## Contributing
 
@@ -200,7 +209,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Ananya Stitipragyab** - *Backend and Document work*
-* **supriya Sinha** - *Android, front-end development, integration* 
+* **Ananya Stitipragyan** - *Backend and Document work*
+* **Supriya Sinha** - *Android, front-end development, integration* 
 
 See also the list of [contributors](https://github.com/Code-and-Response/Project-Sample/graphs/contributors) who participated in this project.
