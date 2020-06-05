@@ -101,7 +101,7 @@ We can automate the queue into virtual one so that the patient does not have to 
 
 ## Project roadmap
 
-![Roadmap](roadmap.jpg)
+![Roadmap](RoadMap.jpg)
 
 ## Getting started
 
