@@ -2,6 +2,7 @@
 
 [![License](https://img.shields.io/badge/License-Apache2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Slack](https://img.shields.io/badge/Join-Slack-blue)](https://callforcode.org/slack) [![Website](https://img.shields.io/badge/View-Website-blue)](https://code-and-response.github.io/Project-Sample/)
 
+
 Automation tool that virtualizes the waiting Queue At medical centers, Labs and  hospital. Specifically during the hour of crisis like Covid-19 pandemic.
 
 
@@ -18,8 +19,6 @@ Automation tool that virtualizes the waiting Queue At medical centers, Labs and 
 1. [Running the tests](#running-the-WellnessQ-app)
 1. [Live demo](#live-demo)
 1. [Built with](#built-with)
-1. [Contributing](#contributing)
-1. [Versioning](#versioning)
 1. [Authors](#authors)
 
 
@@ -92,24 +91,22 @@ We can automate the queue into virtual one so that the patient does not have to 
       b. Delete your request
       c. Get real-time notification when queues are updated 
 
-4. The android app uses push notification service and gcm service
+4. The android app uses push notification service and FCM service - OTP base Authentication
 
 5. The android app makes REST API calls to spring boot backend to get records of users
 
 6. The Spring boot backend is connected to MongoDB in cloud
 
 7. The Software product WellnessQ is deployed in IBM cloud foundry Application
- 
 
+8. Google Maps -Connected to Android Application
 
+9. Retrofit used for makinhg REST API call
 
-## Long description
-
-[More detail is available here](DESCRIPTION.md)
 
 ## Project roadmap
 
-![Roadmap](roadmaphackathon.jpg)
+![Roadmap](roadmap1.jpg)
 
 ## Getting started
 
@@ -120,12 +117,13 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```bash
-Install Java Eclipse
-Install Android Studio
-mongoDB cluster
+Spring Tool Suite 4
+Android Studio
+mongoDB
 IBM cloud foundry Application
+FCM Phone Authentication
 IBM cloud push notification service
-
+Google Map
 ```
 
 ### Installing
@@ -152,12 +150,11 @@ import project
 End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
-
-Explain how to run the automated tests for this system
+[Swagger UI](http://wellnessq.mybluemix.net/swagger-ui.html)
 
 ### manifest.yml file
 
-Explain what these tests test and why, if you were using something like `mocha` for instnance
+yml file used for deployment
 
 ```bash
 applications:
@@ -182,7 +179,7 @@ Keep your deployable jar and manifest.yml file in the same folder and open camma
 
 ```bash
 cf login --sso
-cf pushs
+cf push
 ```
 
 ## Live demo
@@ -197,19 +194,11 @@ You can find a running system to test at [wellnessq.mybluemix.net](http://wellne
 * [Java eclipse](https://www.eclipse.org/downloads/packages/installerhttp://www.dropwizard.io/1.0.2/docs/) - The IDE used for backed development
 * [Maven](https://maven.apache.org/) - Dependency management
 * [Android Studio](https://developer.android.com/studio) - The IDE used for andriod development
-* [swagger ui]- Enabled
-
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+* [swagger ui](https://swagger.io/) - Enabled -To view REST APIs
+* [firebase phone authentication](https://firebase.google.com/docs/auth/android/phone-auth) - OTP based phone Authentication
 
 ## Authors
 
-* **Ananya Stitipragyan** - *Backend and Document work*
-* **Supriya Sinha** - *Android, front-end development, integration* 
+* **Ananya Stitipragyan** - *Java Backend, MongoDB and Document work*
+* **Supriya Sinha** - *Android, front-end development, integration, push notification, phone authentication, and google Map integration , Map deployment* 
 
-See also the list of [contributors](https://github.com/Code-and-Response/Project-Sample/graphs/contributors) who participated in this project.
