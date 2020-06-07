@@ -199,6 +199,6 @@ You can find a running system to test at [wellnessq.mybluemix.net](http://wellne
 
 ## Authors
 
-* **Ananya Stitipragyan** - *Java Backend, MongoDB and Document work*
+* [**Ananya Stitipragyan**](https://www.linkedin.com/in/ananya-stitipragyan-44238b9b) - *Java Spring-boot Backend, MongoDB, Demo Video and Document work*
 * **Supriya Sinha** - *Android, front-end development, integration, push notification, phone authentication, and google Map integration , Map deployment* 
 
